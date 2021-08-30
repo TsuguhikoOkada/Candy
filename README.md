@@ -1,5 +1,6 @@
 # Candy
 Self-Confidence Work!!
 
-![Candy_Game_Pic](https://user-images.githubusercontent.com/83790901/131397530-8275c417-4190-4d33-a76a-3882b96a860f.png)
+![CandyLandMain](https://user-images.githubusercontent.com/83790901/131397678-9af84d1f-39d6-42c1-898a-67d010171ca4.png)
+
 
