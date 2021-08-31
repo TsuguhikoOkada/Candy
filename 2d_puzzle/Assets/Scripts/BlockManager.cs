@@ -184,6 +184,11 @@ public class BlockManager : MonoBehaviour
         removeBlockList.Clear();
     }
 
+    /// <summary>
+    ///  キャンディーを消した時のスコア加算とフィーバーゲージ加算
+    /// </summary>
+    /// <param name="chain"></param>
+
     public void OnBlockClear(int chain)
     {
         scoreManager.AddScore(ScoreManager.CalculateScore(chain, 1, feverManager.IsFever()));

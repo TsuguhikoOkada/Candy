@@ -1,18 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+///  個々のキャンディーとチェーン、フィーバー、コンボ時のスクリプト
+/// </summary>
 
 public class ScoreManager : MonoBehaviour
 {
 
-    static int blockScore = 50;
+    static int blockScore = 50; // キャンディー1個のスコア値
+
+    /// <summary>
+    ///  キャンディーをChainして消去した時に発生するスコア値を配列で格納
+    /// </summary>
+
     static int[] chainScoreMap = {
     0, 0, 0, 300, 700, 1300, 2100, 3100, 4600, 6100, // chain 3 ~ 9
     7600, 9600, 11600, 13600, 15600, 18100, 20600, 23100, 25600, 28100 // chain 10 ~ 19
     };
 
     Text scoreText;
-    static int score = 0;
+    static int score = 0; // 記録されるスコアの値
 
     void Start()
     {
@@ -27,6 +35,11 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    ///  スコア加算のクラス
+    /// </summary>
+    /// <param name="point"></param>
 
     public void AddScore(int point)
     {
@@ -46,6 +59,16 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = score.ToString();
         }
     }
+
+    /// <summary>
+    ///  キャンディーを消去した時のスコア計算式を記述
+    /// </summary>
+    /// <param name="chain"></param>
+    /// <param name="combo"></param>
+    /// <param name="fever"></param>
+    /// <returns></returns>
+
+
 
     public static int CalculateScore(int chain, int combo, bool fever)
     {
