@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -97,7 +97,7 @@ public class BlockManager : MonoBehaviour
             OnBlockClear(count);
             if (count >= 7)
             {
-                // Since lastBlock is deleted in ClearRemoveBlockList, this has to go before that
+                
                 GenerateBomb(lastBlock.transform.position);
             }
             ClearRemoveBlockList();
@@ -142,7 +142,7 @@ public class BlockManager : MonoBehaviour
           (Vector2)(newBlock.transform.position - lastBlock.transform.position),
           1);
 
-        // The first hit is ignored because it returns the origin itself
+        
         if (hits.Length > 1)
         {
             if (hits[1].collider != null)
@@ -163,7 +163,7 @@ public class BlockManager : MonoBehaviour
         block.GetComponent<Block>().SetTransparency(0.5f);
     }
 
-    // Distroy and move everyting out of removeBlockList
+    
     void ClearRemoveBlockList()
     {
         foreach (GameObject block in removeBlockList)
@@ -173,7 +173,7 @@ public class BlockManager : MonoBehaviour
         removeBlockList.Clear();
     }
 
-    // Move everything out of removeBlockList without distroying
+    
     void ResetRemoveBlockList()
     {
         foreach (GameObject block in removeBlockList)
